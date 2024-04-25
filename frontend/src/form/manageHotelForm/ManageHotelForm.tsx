@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 
 export type HotelFormData = {
     name :string;
@@ -16,9 +16,11 @@ export type HotelFormData = {
 
 const ManageHotelForm = () =>{
     const formMethod = useForm<HotelFormData>();
-    return<form>
-
-    </form>
+    return(
+        <FormProvider {...formMethod}>
+            <form action=""></form>
+        </FormProvider>
+    )
 }
 
 export default ManageHotelForm
