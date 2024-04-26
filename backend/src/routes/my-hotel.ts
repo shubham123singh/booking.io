@@ -26,7 +26,7 @@ router.post("/", verifyToken,
     ], upload.array("imageFiles", 6), async (req: Request, res: Response) => {
 
         try {
-            const imageFiles = req.file as unknown as Express.Multer.File[];
+            const imageFiles = req.files as Express.Multer.File[];
             const newHotel: HotelType = req.body;
 
             // upload the image to cloudinary
